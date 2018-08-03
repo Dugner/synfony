@@ -13,4 +13,5 @@ task_list:
 task_detail:
   path:     /task/detail
   controller: App\Controller\TaskController::taskDetail
+
   
