@@ -1,0 +1,35 @@
+{% extends "base.html.twig" %}
+{% block body %}
+  <main role="main">
+		<div class="container">
+            <table class="table table-striped">
+            	<thead>
+            		<tr>
+            			<th>Creation date</th>
+            			<th>Title</th>
+            			<th>Worker</th>
+            			<th>Responsability</th>
+						<th>Tasks</th>
+						<th>Position</th>
+            		</tr>
+            	</thead>
+            	<tbody>
+            		{% for work in works %}
+            			<tr>
+            				<td>{{ work.getDateOfCreation()|date('Y-m-d H:i:s') }}</td>
+            				<td>{{ work.getTitle() }}</td>
+            				<td>{{ work.getWorker().getPosition() }}</td>
+            				<td>{{ work.getResponsible() }}</td>
+            				<td>{{ work.getListTasks() }}</td>
+            				<td>{{ work.getPosition() }}</td>
+							<td><a href="{{ path("task_detail", {id: work.getId()}) }}">Detail</a></td>
+            			</tr>
+            		{% endfor %}
+            	</tbody>
+            </table>
+
+			 <hr>
+		</div>
+  </main>
+  {% endblock %}
+  

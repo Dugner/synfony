@@ -14,4 +14,12 @@ task_detail:
   path:     /task/detail
   controller: App\Controller\TaskController::taskDetail
 
+work_list:
+  path:     /work
+  controller: App\Controller\WorkController::listWorks
+
+work_detail:
+  path:     /work/detail
+  controller: App\Controller\WorkController::workDetail
+
   

@@ -1,0 +1,16 @@
+
+  {% extends "base.html.twig" %}
+  {% block body %}
+      <main role="main">
+        <div class="container">
+          <p>id : {{ work.getId() }}</p>
+          <p>create date : {{ work.getDateOfCreation()|date('Y-m-d H:i:s') }}</p>
+          <p>Title : {{ work.getTitle() }}</p>
+          <p>Worker : {{ work.getWorker().getPosition() }}</p>
+          <p>Responsible : {{ work.getResponsible() }}</p>
+          <p>Tasks : {{ task.getListTasks() }}</p>
+          <p>Position : {{ task.getPosition() }}</p>
+        </div>
+      </main>
+    <hr>
+  {% endblock %}

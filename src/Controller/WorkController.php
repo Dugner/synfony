@@ -4,49 +4,54 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
-use Symfony\Component\HttpFoundation\Request;
-use App\Provider\TaskProvider;
+use App\Provider\WorkProvider;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
 
-class TaskController extends Controller
+
+
+class WorkController extends Controller
 {
-    # we create constructor for the provider so we dont need to declare it down in the task detail and listtasks
     private $provider;
     private $twig;
 
-    public function __construct(TaskProvider $provider, \Twig_Environment $twig)
+    public function __construct(WorkProvider $provider, \Twig_Environment $twig)
     {
         $this->provider = $provider;
         $this->twig = $twig;
 
     }
 
-    public function listTasks()
+    public function listWorks()
     {
         return new Response(
             $this->twig->render(
-            'task/list.html.twig', 
-            ['tasks' => $this->provider->provideTasks() ]
+            'work/listworks.html.twig', 
+            ['works' => $this->provider->provideWork() ]
             )
         );
     }
-    public function taskDetail(Request $request)
+    public function workDetail(Request $request)
     {
         $id = $request->query->get('id');
 
         if(!$id) {
             throw new NotFoundHttpException();
         }
-        $tasks = $this->provider->provideTasks();
+        $tasks = $this->provider->provideWork();
         if(!isset($tasks[$id])){
             throw new NotFoundHttpException();
         }
         return new Response(
             $this->twig->render(
-            'task/detail.html.twig', 
-            ['task' => $this->provider->provideTasks()[$id] ]
+            'work/workdetail.html.twig', 
+            ['work' => $this->provider->provideWork()[$id] ]
             )
         );
     }
+
+
+
+
 
 }
