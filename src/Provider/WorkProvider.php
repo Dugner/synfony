@@ -21,7 +21,7 @@ class WorkProvider
                 'Monkey busines'
             ),
             2 => new Project(
-                1,
+                2,
                 'Ninja worker',
                 $worker,
                 ' dig a hole in the ground and cry ',
@@ -29,7 +29,7 @@ class WorkProvider
                 'no one know'
             ),
             3 => new Project(
-                1,
+                3,
                 'Ninja worker',
                 $worker,
                 ' dig a hole in the ground and cry ',
@@ -37,7 +37,7 @@ class WorkProvider
                 'no one know'
             ),
             4 => new Project(
-                1,
+                4,
                 'Ninja worker',
                 $worker,
                 ' dig a hole in the ground and cry ',

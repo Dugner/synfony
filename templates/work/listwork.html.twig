@@ -22,7 +22,7 @@
             				<td>{{ work.getResponsible() }}</td>
             				<td>{{ work.getListTasks() }}</td>
             				<td>{{ work.getPosition() }}</td>
-							<td><a href="{{ path("task_detail", {id: work.getId()}) }}">Detail</a></td>
+							<td><a href="{{ path("work_detail", {id: work.getId()}) }}">Detail</a></td>
             			</tr>
             		{% endfor %}
             	</tbody>
