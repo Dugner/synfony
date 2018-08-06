@@ -26,7 +26,7 @@ class WorkController extends Controller
     {
         return new Response(
             $this->twig->render(
-            'work/listworks.html.twig', 
+            'work/listwork.html.twig', 
             ['works' => $this->provider->provideWork() ]
             )
         );

@@ -2,7 +2,7 @@
 
 namespace App\Provider;
 
-use App\Entity\Project\ProjectClass;
+use App\Entity\Project\Project;
 use App\Entity\Project\Worker;
 
 class WorkProvider
@@ -18,7 +18,7 @@ class WorkProvider
                 $worker,
                 ' dig a hole in the ground and cry ',
                 'make a soup, bake eggs, eat monkey',
-                'no one know'
+                'Monkey busines'
             ),
             2 => new Project(
                 1,

@@ -21,7 +21,6 @@ class Project
     public function __construct(
         $id,
         string $title,
-        string $dateOfCreation,
         $worker,
         string $responsible,
         string $listTasks,
@@ -33,7 +32,6 @@ class Project
 
        $this->id = $id;
        $this->title = $title;
-       $this->dateOfCreation = $dateOfCreation;
        $this->worker = $worker;
        $this->responsible = $responsible;
        $this->listTasks = $listTasks;
